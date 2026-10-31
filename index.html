@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +56,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 #envelope-wrap:hover{transform:scale(1.03) translateY(-6px);}
 #envelope-wrap.opening{cursor:default;pointer-events:none;}
 
-/* Envelope body */
 .env-body{
   width:100%;
   aspect-ratio:1.6/1;
@@ -69,7 +69,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   content:'';position:absolute;inset:0;
   background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.015) 20px,rgba(255,255,255,0.015) 21px);
 }
-/* Side triangles */
 .env-side-l,.env-side-r{
   position:absolute;bottom:0;width:0;height:0;
   border-style:solid;
@@ -86,13 +85,11 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   border-color:transparent rgba(13,21,71,0.95) transparent transparent;
   filter:drop-shadow(-2px 0 4px rgba(0,0,0,0.3));
 }
-/* Bottom flap (V shape) */
 .env-bottom{
   position:absolute;bottom:0;left:0;right:0;height:50%;
   background:linear-gradient(170deg,#0f1d5a 0%,#0a1340 100%);
   clip-path:polygon(0 100%,50% 0,100% 100%);
 }
-/* Wax seal */
 .wax-seal{
   position:absolute;
   bottom:-20px;left:50%;transform:translateX(-50%);
@@ -106,9 +103,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   border:2px solid rgba(201,168,76,0.4);
   animation:sealPulse 3s ease-in-out infinite;
 }
-@keyframes sealPulse{0%,100%{box-shadow:0 4px 16px rgba(201,168,76,0.5),inset 0 -2px 6px rgba(0,0,0,0.3)}50%{box-shadow:0 4px 30px rgba(201,168,76,0.9),inset 0 -2px 6px rgba(0,0,0,0.3)}}
-
-/* Top flap */
+@keyframes sealPulse{
+  0%,100%{box-shadow:0 4px 16px rgba(201,168,76,0.5),inset 0 -2px 6px rgba(0,0,0,0.3)}
+  50%{box-shadow:0 4px 30px rgba(201,168,76,0.9),inset 0 -2px 6px rgba(0,0,0,0.3)}
+}
 .env-flap{
   position:absolute;top:0;left:0;right:0;
   height:55%;
@@ -130,16 +128,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   background:linear-gradient(180deg,rgba(255,255,255,0.06) 0%,transparent 60%);
   clip-path:polygon(0 0,100% 0,50% 100%);
 }
-/* Gold border on envelope */
 .env-border{
   position:absolute;inset:4px;
   border:1px solid rgba(201,168,76,0.25);
   border-radius:2px 2px 6px 6px;
   pointer-events:none;
 }
-/* Monogram on flap */
 .env-monogram{
-  position:absolute;top:18%;;left:50%;transform:translateX(-50%);
+  position:absolute;top:18%;left:50%;transform:translateX(-50%);
   font-family:'Cinzel',serif;
   font-size:clamp(1.4rem,5vw,2rem);
   color:rgba(201,168,76,0.7);
@@ -147,8 +143,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   letter-spacing:0.1em;
   z-index:6;pointer-events:none;
 }
-
-/* Gold ribbon lines */
 .env-ribbon{
   position:absolute;width:100%;
   display:flex;align-items:center;justify-content:center;
@@ -162,8 +156,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   transform:rotate(45deg);
   box-shadow:0 0 8px rgba(201,168,76,0.6);
 }
-
-/* Card inside envelope */
 .env-card-preview{
   position:absolute;
   bottom:8%;left:10%;right:10%;
@@ -184,12 +176,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   text-align:center;
   opacity:0.7;
 }
-
-/* Opening animation states */
 #envelope-wrap.opening .env-flap{transform:rotateX(-160deg);}
 #envelope-wrap.opening .env-card-preview{transform:translateY(0);}
 
-/* ── SCENE 2: INVITATION CARD (full scroll) ── */
+/* ── SCENE 2: INVITATION CARD ── */
 #scene-card{
   position:fixed;inset:0;z-index:20;
   overflow-y:auto;overflow-x:hidden;
@@ -198,8 +188,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   background:var(--ink);
 }
 #scene-card.visible{opacity:1;pointer-events:all;}
-
-/* Particle flicker on card */
 #scene-card::before{
   content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
@@ -233,8 +221,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   opacity:0.5;
 }
 .card-paper.revealed{transform:scale(1);opacity:1;}
-
-/* Gold border frame */
 .card-border-outer{
   position:absolute;inset:12px;
   border:1px solid rgba(201,168,76,0.45);
@@ -247,7 +233,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   border-radius:2px;
   pointer-events:none;z-index:0;
 }
-/* Corner ornaments */
 .corner{
   position:absolute;width:24px;height:24px;
   z-index:1;pointer-events:none;
@@ -258,9 +243,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 .corner.bl{bottom:22px;left:22px;transform:rotate(-90deg);}
 .corner.br{bottom:22px;right:22px;transform:rotate(180deg);}
 
-/* Card content */
 .card-content{position:relative;z-index:2;text-align:center;}
-
 .card-overline{
   font-family:'Cinzel',serif;
   font-size:clamp(0.55rem,1.5vw,0.7rem);
@@ -291,8 +274,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   letter-spacing:0.5em;
   color:var(--sapphire);
 }
-
-/* Divider */
 .card-divider{
   display:flex;align-items:center;gap:0.8rem;
   margin:1.5rem 0;
@@ -304,8 +285,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   transform:rotate(45deg);
   box-shadow:0 0 8px rgba(201,168,76,0.5);
 }
-
-/* Invitation body text */
 .card-body{
   font-family:'Cormorant Garamond',serif;
   font-size:clamp(1rem,2.5vw,1.2rem);
@@ -456,7 +435,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   margin-top:0.3rem;
 }
 
-/* Stars on dark bg */
+/* Stars */
 .star{
   position:fixed;border-radius:50%;background:white;
   animation:twk var(--d,3s) ease-in-out infinite var(--dl,0s);
@@ -480,7 +459,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   100%{opacity:0;transform:translate(var(--px,30px),calc(-100vh - 50px)) rotate(360deg);}
 }
 
-/* ── OPEN BUTTON (back) ── */
+/* ── BACK BUTTON ── */
 .back-btn{
   position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;
   background:linear-gradient(135deg,var(--royal),var(--ink));
@@ -497,7 +476,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 .back-btn:hover{background:linear-gradient(135deg,var(--sapphire),var(--royal));transform:translateY(-2px);}
 
 /* ── CLICK RIPPLE ── */
-@keyframes ripple{0%{transform:translate(-50%,-50%) scale(0);opacity:0.6;}100%{transform:translate(-50%,-50%) scale(6);opacity:0;}}
+@keyframes ripple{
+  0%{transform:translate(-50%,-50%) scale(0);opacity:0.6;}
+  100%{transform:translate(-50%,-50%) scale(6);opacity:0;}
+}
 .ripple-el{
   position:fixed;border-radius:50%;
   width:80px;height:80px;
@@ -516,15 +498,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   animation:fadeInUp 1s ease 2s both;
   pointer-events:none;
 }
-@keyframes fadeInUp{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translate(-50%,10px)}
+  to{opacity:1;transform:translate(-50%,0)}
+}
 .scroll-arrow{animation:bob 1.5s ease-in-out infinite;}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
 /* ── COUNTDOWN ── */
-.countdown-section{
-  margin:2rem 0;
-  text-align:center;
-}
+.countdown-section{margin:2rem 0;text-align:center;}
 .countdown-label{
   font-family:'Cinzel',serif;
   font-size:0.6rem;letter-spacing:0.4em;
@@ -565,11 +547,15 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 }
 @keyframes sepBlink{0%,100%{opacity:0.6}50%{opacity:0.15}}
 
-/* ── COUNTDOWN ── */
-.fade-section{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+/* ── FADE SECTIONS ── */
+.fade-section{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.7s ease,transform 0.7s ease;
+}
 .fade-section.in{opacity:1;transform:translateY(0);}
 </style>
 </head>
+
 <body>
 
 <!-- Stars -->
@@ -582,7 +568,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   <div id="envelope-wrap" onclick="openEnvelope(event)">
     <div class="env-body">
       <div class="env-border"></div>
-      <!-- Gold V lines -->
       <div class="env-ribbon top">
         <div class="env-ribbon-line"></div>
         <div class="env-ribbon-diamond"></div>
@@ -591,18 +576,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
       <div class="env-side-l"></div>
       <div class="env-side-r"></div>
       <div class="env-bottom"></div>
-      <!-- Card peeking out -->
       <div class="env-card-preview">
         <div class="env-card-preview-text">RHIANA C. SADIA<br/>18TH DEBUT</div>
       </div>
     </div>
-    <!-- Animated flap -->
+
     <div class="env-flap">
       <div class="env-flap-inner"></div>
     </div>
-    <!-- Monogram (visible before opening) -->
+
     <div class="env-monogram">RS</div>
-    <!-- Wax seal -->
     <div class="wax-seal">✦</div>
   </div>
 
@@ -616,9 +599,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   <div style="padding:0 clamp(1rem,4vw,2rem);position:relative;z-index:2;">
     <div class="card-paper" id="card-paper">
 
-      <!-- Frame decorations -->
       <div class="card-border-outer"></div>
       <div class="card-border-inner"></div>
+
       <div class="corner tl"><svg viewBox="0 0 24 24"><path d="M20 4H4v16"/><path d="M4 4l8 8"/></svg></div>
       <div class="corner tr"><svg viewBox="0 0 24 24"><path d="M20 4H4v16"/><path d="M4 4l8 8"/></svg></div>
       <div class="corner bl"><svg viewBox="0 0 24 24"><path d="M20 4H4v16"/><path d="M4 4l8 8"/></svg></div>
@@ -631,16 +614,24 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
           <p class="card-overline">✦ &nbsp; you are cordially invited &nbsp; ✦</p>
           <p class="card-eighteenth">to the eighteenth birthday of</p>
 
-          <div class="card-divider"><div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div></div>
+          <div class="card-divider">
+            <div class="div-line"></div><div class="div-gem"></div><div class="div-line"></div>
+          </div>
 
           <h1 class="card-name">
             Rhiana
             <span>C. Sadia</span>
           </h1>
 
-          <div class="card-divider"><div class="div-line"></div><div class="div-gem"></div><div class="div-gem" style="margin:0 -4px"></div><div class="div-gem"></div><div class="div-line"></div></div>
+          <div class="card-divider">
+            <div class="div-line"></div>
+            <div class="div-gem"></div>
+            <div class="div-gem" style="margin:0 -4px"></div>
+            <div class="div-gem"></div>
+            <div class="div-line"></div>
+          </div>
 
-          <p class="card-debut">DEBUT &nbsp;·&nbsp; DECEMBER 20, 2026</p>
+          <p class="card-debut">DEBUT &nbsp;·&nbsp; DECEMBER 12, 2026</p>
         </div>
 
         <!-- Invitation text -->
@@ -652,6 +643,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
             as their daughter takes her first steps<br/>
             into the grace and wonder of womanhood.
           </p>
+
           <p class="card-body" style="margin-top:1rem;">
             Join us beneath the midnight stars<br/>
             for an evening wrapped in elegance,<br/>
@@ -659,23 +651,25 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
           </p>
         </div>
 
-        <!-- Details -->
+        <!-- Event Details -->
         <div class="fade-section">
           <div class="detail-block">
+
             <div class="detail-item">
               <div class="detail-label">📅 DATE</div>
-              <div class="detail-value">December 20, 2026</div>
+              <div class="detail-value">December 12, 2026</div>
             </div>
+
             <div class="detail-item">
               <div class="detail-label">⏰ TIME</div>
-              <div class="detail-value">5:00 in the Evening</div>
+              <div class="detail-value">4:00 in the Afternoon</div>
             </div>
+
             <div class="detail-item full">
               <div class="detail-label">📍 VENUE</div>
-              <div class="detail-value">NDN and Events Place<br/>
-                <span style="font-size:0.85em;font-weight:400;color:rgba(26,42,108,0.7);">32VR+26M, Talisay, Batangas</span>
-              </div>
+              <div class="detail-value">Leónida's Resort and Restaurant</div>
             </div>
+
           </div>
         </div>
 
@@ -683,14 +677,33 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
         <div class="fade-section">
           <div class="countdown-section">
             <p class="countdown-label">✦ &nbsp; COUNTING DOWN TO THE BIG DAY &nbsp; ✦</p>
+
             <div class="countdown-grid">
-              <div class="cd-box"><div class="cd-num" id="cd-days">000</div><div class="cd-lbl">Days</div></div>
+              <div class="cd-box">
+                <div class="cd-num" id="cd-days">000</div>
+                <div class="cd-lbl">Days</div>
+              </div>
+
               <div class="cd-sep">:</div>
-              <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-lbl">Hours</div></div>
+
+              <div class="cd-box">
+                <div class="cd-num" id="cd-hours">00</div>
+                <div class="cd-lbl">Hours</div>
+              </div>
+
               <div class="cd-sep">:</div>
-              <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-lbl">Mins</div></div>
+
+              <div class="cd-box">
+                <div class="cd-num" id="cd-mins">00</div>
+                <div class="cd-lbl">Mins</div>
+              </div>
+
               <div class="cd-sep">:</div>
-              <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-lbl">Secs</div></div>
+
+              <div class="cd-box">
+                <div class="cd-num" id="cd-secs">00</div>
+                <div class="cd-lbl">Secs</div>
+              </div>
             </div>
           </div>
         </div>
@@ -699,13 +712,34 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
         <div class="fade-section">
           <div class="dress-section">
             <p class="dress-title">✦ &nbsp; DRESS CODE &nbsp; ✦</p>
+
             <div class="dress-grid">
-              <span class="dress-pill"><span class="swatch" style="background:#1a1a1a;border:1px solid #444;"></span>Black – Classic &amp; Formal</span>
-              <span class="dress-pill"><span class="swatch" style="background:#f5f5f0;border:1px solid #ccc;"></span>White / Off-White</span>
-              <span class="dress-pill"><span class="swatch" style="background:#a0a8b8;"></span>Silver / Gray</span>
-              <span class="dress-pill"><span class="swatch" style="background:#d4b896;"></span>Nude / Champagne / Beige</span>
-              <span class="dress-pill"><span class="swatch" style="background:linear-gradient(135deg,#c0c8d8,#c9a84c);"></span>Metallics</span>
+              <span class="dress-pill">
+                <span class="swatch" style="background:#1a1a1a;border:1px solid #444;"></span>
+                Black – Classic &amp; Formal
+              </span>
+
+              <span class="dress-pill">
+                <span class="swatch" style="background:#f5f5f0;border:1px solid #ccc;"></span>
+                White / Off-White
+              </span>
+
+              <span class="dress-pill">
+                <span class="swatch" style="background:#a0a8b8;"></span>
+                Silver / Gray
+              </span>
+
+              <span class="dress-pill">
+                <span class="swatch" style="background:#d4b896;"></span>
+                Nude / Champagne / Beige
+              </span>
+
+              <span class="dress-pill">
+                <span class="swatch" style="background:linear-gradient(135deg,#c0c8d8,#c9a84c);"></span>
+                Metallics
+              </span>
             </div>
+
             <p style="margin-top:1rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:rgba(26,42,108,0.6);">
               Kindly reserve <strong style="font-style:normal;color:var(--royal);">Midnight Blue</strong> for the debutante ✦
             </p>
@@ -716,13 +750,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
         <div class="fade-section">
           <div class="gift-section">
             <p class="card-overline" style="margin-bottom:0.8rem;">✦ &nbsp; GIFT REGISTRY &nbsp; ✦</p>
+
             <p class="gift-quote">
               "Your presence is the greatest gift of all —<br/>
               no offering is required, only your warm company."
             </p>
+
             <p style="font-family:'Montserrat',sans-serif;font-size:0.75rem;color:rgba(26,42,108,0.65);">
               However, if you wish to bless Rhiana, she would love:
             </p>
+
             <div class="gift-tags">
               <span class="gift-tag">💳 GCash</span>
               <span class="gift-tag">💄 Skincare &amp; Beauty</span>
@@ -733,6 +770,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
               <span class="gift-tag">👜 Bag</span>
               <span class="gift-tag">💍 Silver Jewelries</span>
             </div>
+
             <div class="gcash-box">
               GCash: <strong>09XX-XXX-XXXX</strong> &nbsp;·&nbsp; Rhiana C. Sadia
             </div>
@@ -742,55 +780,81 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
         <!-- Map -->
         <div class="fade-section">
           <div class="map-section">
+
             <div class="map-header">
-              <svg width="16" height="16" fill="none" stroke="var(--gold-light)" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <svg width="16" height="16" fill="none" stroke="var(--gold-light)" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+
               <div>
-                <div class="map-header-text">NDN AND EVENTS PLACE</div>
-                <div class="map-header-sub">32VR+26M, Talisay, Batangas</div>
+                <div class="map-header-text">LEONIDA'S RESORT AND RESTAURANT</div>
+                <div class="map-header-sub">December 12, 2026 · 4:00 PM</div>
               </div>
             </div>
+
             <div class="map-frame-wrap">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.584!2d121.0379568!3d14.0925979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd706e4f1fe8d7%3A0x24f6029a92527177!2sNDN%20Resort%20And%20Events%20Place!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
+                src="https://www.google.com/maps?q=Leonida%27s%20Resort%20and%20Restaurant&output=embed"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 style="width:100%;height:100%;border:0;display:block;"
-                title="NDN Resort and Events Place, Talisay Batangas">
+                title="Leónida's Resort and Restaurant">
               </iframe>
             </div>
+
             <div class="map-cta">
-              <a href="https://www.google.com/maps/place/NDN+Resort+And+Events+Place/@14.0925979,121.0379568,17z" target="_blank">
+              <a
+                href="https://www.google.com/maps/place/leonida's+resort+and+restaurant/data=!4m2!3m1!1s0x33bd71d04c84563b:0xf94d2feb3abcb39e?sa=X&ved=1t:242&ictx=111"
+                target="_blank"
+                rel="noopener noreferrer">
                 ✦ &nbsp; OPEN IN GOOGLE MAPS &nbsp; ✦
               </a>
             </div>
+
           </div>
         </div>
 
         <!-- Footer -->
         <div class="fade-section">
           <div class="card-footer">
-            <div class="card-divider"><div class="div-line"></div><div class="div-gem"></div><div class="div-gem" style="margin:0 -4px"></div><div class="div-gem"></div><div class="div-line"></div></div>
+
+            <div class="card-divider">
+              <div class="div-line"></div>
+              <div class="div-gem"></div>
+              <div class="div-gem" style="margin:0 -4px"></div>
+              <div class="div-gem"></div>
+              <div class="div-line"></div>
+            </div>
+
             <p class="card-footer-name">Rhiana C. Sadia</p>
-            <p class="card-footer-sub">18th Birthday Debut &nbsp;·&nbsp; December 20, 2026</p>
+
+            <p class="card-footer-sub">
+              18th Birthday Debut &nbsp;·&nbsp; December 12, 2026
+            </p>
+
             <p style="margin-top:1rem;font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.3em;color:rgba(201,168,76,0.5);">
               ✦ &nbsp; CRAFTED WITH LOVE &nbsp; ✦
             </p>
+
           </div>
         </div>
 
-      </div><!-- /card-content -->
-    </div><!-- /card-paper -->
-  </div><!-- /padding wrap -->
+      </div>
+    </div>
+  </div>
 
   <!-- Scroll hint -->
   <div class="scroll-hint" id="scroll-hint">
     <span>SCROLL</span>
     <div class="scroll-arrow">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
     </div>
   </div>
-</div><!-- /scene-card -->
+</div>
 
 <!-- Back button -->
 <button class="back-btn" id="back-btn" onclick="backToEnvelope()">↩ ENVELOPE</button>
@@ -798,11 +862,23 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 <script>
 // ── Stars ──
 const sf = document.getElementById('starfield');
+
 for(let i=0;i<200;i++){
   const s=document.createElement('div');
   s.className='star';
+
   const sz=Math.random()*2+0.4;
-  s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${(Math.random()*4+1.5).toFixed(1)}s;--dl:${(Math.random()*6).toFixed(1)}s;--op:${(Math.random()*0.8+0.2).toFixed(2)}`;
+
+  s.style.cssText=`
+    width:${sz}px;
+    height:${sz}px;
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    --d:${(Math.random()*4+1.5).toFixed(1)}s;
+    --dl:${(Math.random()*6).toFixed(1)}s;
+    --op:${(Math.random()*0.8+0.2).toFixed(2)}
+  `;
+
   sf.appendChild(s);
 }
 
@@ -810,9 +886,19 @@ for(let i=0;i<200;i++){
 for(let i=0;i<20;i++){
   const p=document.createElement('div');
   p.className='petal';
+
   const left=Math.random()*100;
   const dx=(Math.random()-0.5)*120;
-  p.style.cssText=`left:${left}%;top:${90+Math.random()*20}%;--pd:${(Math.random()*10+6).toFixed(1)}s;--pdl:${(Math.random()*10).toFixed(1)}s;--px:${dx}px;transform:rotate(${Math.random()*360}deg)`;
+
+  p.style.cssText=`
+    left:${left}%;
+    top:${90+Math.random()*20}%;
+    --pd:${(Math.random()*10+6).toFixed(1)}s;
+    --pdl:${(Math.random()*10).toFixed(1)}s;
+    --px:${dx}px;
+    transform:rotate(${Math.random()*360}deg)
+  `;
+
   document.body.appendChild(p);
 }
 
@@ -821,34 +907,48 @@ function spawnRipple(x,y){
   const r=document.createElement('div');
   r.className='ripple-el';
   r.style.cssText=`left:${x}px;top:${y}px;`;
+
   document.body.appendChild(r);
+
   setTimeout(()=>r.remove(),800);
 }
 
 // ── Open envelope ──
 let opened=false;
+
 function openEnvelope(e){
   if(opened)return;
+
   opened=true;
+
   const rect=e.currentTarget.getBoundingClientRect();
-  spawnRipple(rect.left+rect.width/2,rect.top+rect.height/2);
+
+  spawnRipple(
+    rect.left+rect.width/2,
+    rect.top+rect.height/2
+  );
 
   const wrap=document.getElementById('envelope-wrap');
+
   wrap.classList.add('opening');
 
   // After flap opens, fade to card
   setTimeout(()=>{
     const scene2=document.getElementById('scene-card');
     const paper=document.getElementById('card-paper');
+
     scene2.classList.add('visible');
+
     document.getElementById('scene-envelope').style.pointerEvents='none';
 
     setTimeout(()=>{
       paper.classList.add('revealed');
+
       document.getElementById('back-btn').style.display='block';
 
       // Fade in sections with stagger
       const sections=document.querySelectorAll('.fade-section');
+
       sections.forEach((s,i)=>{
         setTimeout(()=>s.classList.add('in'),400+i*180);
       });
@@ -857,7 +957,9 @@ function openEnvelope(e){
       scene2.addEventListener('scroll',()=>{
         document.getElementById('scroll-hint').style.opacity='0';
       },{once:true,passive:true});
+
     },200);
+
   },1100);
 }
 
@@ -865,44 +967,70 @@ function openEnvelope(e){
 function backToEnvelope(){
   const scene2=document.getElementById('scene-card');
   const paper=document.getElementById('card-paper');
+
   paper.classList.remove('revealed');
   scene2.classList.remove('visible');
   scene2.scrollTop=0;
+
   setTimeout(()=>{
     const wrap=document.getElementById('envelope-wrap');
+
     wrap.classList.remove('opening');
+
     document.getElementById('scene-envelope').style.pointerEvents='';
     document.getElementById('back-btn').style.display='none';
-    document.querySelectorAll('.fade-section').forEach(s=>s.classList.remove('in'));
+
+    document.querySelectorAll('.fade-section').forEach(s=>{
+      s.classList.remove('in');
+    });
+
     opened=false;
+
   },500);
 }
 
 // ── Countdown ──
 function updateCountdown(){
-  const target=new Date('2026-12-20T17:00:00+08:00').getTime();
+
+  // December 12, 2026 at 4:00 PM Philippine time
+  const target=new Date('2026-12-12T16:00:00+08:00').getTime();
+
   const diff=target-Date.now();
+
   if(diff<=0){
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id=>document.getElementById(id).textContent='00');
+    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id=>{
+      document.getElementById(id).textContent='00';
+    });
     return;
   }
+
   const d=Math.floor(diff/86400000);
   const h=Math.floor((diff%86400000)/3600000);
   const m=Math.floor((diff%3600000)/60000);
   const s=Math.floor((diff%60000)/1000);
+
   document.getElementById('cd-days').textContent=String(d).padStart(3,'0');
   document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
   document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
   document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
 }
+
 updateCountdown();
 setInterval(updateCountdown,1000);
 
 // ── Intersection observer for card sections ──
 const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+    }
+  });
 },{threshold:0.12});
-document.querySelectorAll('.fade-section').forEach(s=>io.observe(s));
+
+document.querySelectorAll('.fade-section').forEach(s=>{
+  io.observe(s);
+});
 </script>
+
 </body>
 </html>
