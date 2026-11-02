@@ -1,9 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+<!-- ✦ LINK PREVIEW META TAGS ✦ -->
+<meta property="og:title" content="Rhiana's 18th Debut – You're Invited">
+<meta property="og:description" content="Join us in celebrating Rhiana's 18th birthday! Tap to open your exclusive invitation.">
+<meta property="og:image" content="https://via.placeholder.com/1200x630/1a2a6c/c9a84c?text=Rhiana's+18th+Debut">
+<meta property="og:url" content="https://your-website-url.com">
+<meta property="og:type" content="website">
+
 <title>Rhiana's 18th Debut – You're Invited</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
 
@@ -31,7 +38,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:2rem;
   background:radial-gradient(ellipse 90% 70% at 50% 40%,rgba(26,42,108,0.6),transparent 70%),
-             linear-gradient(160deg,#060b22 0%,#0a0f2e 50%,#060f30 100%);
+              linear-gradient(160deg,#060b22 0%,#0a0f2e 50%,#060f30 100%);
 }
 .prompt-text{
   font-family:'Cinzel',serif;
@@ -250,6 +257,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   letter-spacing:0.4em;
   color:var(--gold);
   margin-bottom:1.2rem;
+  text-transform:uppercase;
 }
 .card-name{
   font-family:'Cinzel Decorative',serif;
@@ -322,14 +330,47 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   background:linear-gradient(135deg,rgba(26,42,108,0.05),rgba(201,168,76,0.06));
   border:1px solid rgba(201,168,76,0.25);
   border-radius:8px;
-  padding:1.5rem;
+  padding:1.8rem 1.5rem;
   margin:2rem 0;
 }
 .dress-title{
   font-family:'Cinzel',serif;
   font-size:0.6rem;letter-spacing:0.35em;
-  color:var(--gold);margin-bottom:1rem;
+  color:var(--gold);margin-bottom:1.5rem;
 }
+
+/* Attire SVG Icon Badges */
+.attire-icons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1.8rem;
+}
+.attire-icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.attire-icon-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(26,42,108,0.08));
+  border: 1px solid rgba(201,168,76,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05), inset 0 0 10px rgba(201,168,76,0.1);
+}
+.attire-icon-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--royal);
+  font-weight: 600;
+}
+
 .dress-grid{
   display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;
 }
@@ -374,18 +415,39 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   font-family:'Montserrat',sans-serif;
   font-size:0.7rem;color:var(--royal);
 }
-.gcash-box{
-  margin-top:1.2rem;padding:0.75rem 1.2rem;
-  background:rgba(26,42,108,0.06);
-  border-radius:6px;border:1px dashed rgba(201,168,76,0.35);
-  font-family:'Montserrat',sans-serif;
-  font-size:0.78rem;color:#2a3060;
+
+/* ── RSVP SECTION ── */
+.rsvp-section {
+  background:linear-gradient(135deg,rgba(26,42,108,0.04),rgba(201,168,76,0.08));
+  border:1px solid rgba(201,168,76,0.3);
+  border-radius:8px;
+  padding:2rem 1.5rem;
+  margin:2rem 0;
+  text-align:center;
 }
-.gcash-box strong{color:var(--royal);font-weight:600;}
+.rsvp-form-container {
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(201,168,76,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
 
 /* ── MAP SECTION ── */
+.map-section-wrapper {
+  margin: 3rem 0 2rem;
+  text-align: center;
+}
+.map-intro-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: var(--royal);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
 .map-section{
-  margin:2rem 0 0;
   border-radius:8px;overflow:hidden;
   border:1px solid rgba(201,168,76,0.3);
   box-shadow:0 8px 30px rgba(0,0,0,0.15);
@@ -414,6 +476,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
   font-size:0.65rem;letter-spacing:0.25em;
   color:var(--gold-light);text-decoration:none;
   transition:color 0.2s;
+  display: block;
 }
 .map-cta a:hover{color:white;}
 
@@ -680,7 +743,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 
             <div class="countdown-grid">
               <div class="cd-box">
-                <div class="cd-num" id="cd-days">000</div>
+                <div class="cd-num" id="cd-days">00</div>
                 <div class="cd-lbl">Days</div>
               </div>
 
@@ -711,12 +774,42 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
         <!-- Dress Code -->
         <div class="fade-section">
           <div class="dress-section">
-            <p class="dress-title">✦ &nbsp; DRESS CODE &nbsp; ✦</p>
+            <p class="dress-title">✦ &nbsp; SEMI-FORMAL ATTIRE &nbsp; ✦</p>
+
+            <!-- Clean Vector Icons for Ladies & Gentlemen -->
+            <div class="attire-icons">
+              
+              <!-- Ladies Gown SVG Icon -->
+              <div class="attire-icon-box">
+                <div class="attire-icon-circle">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                    <path d="M9.5 6.5h5l-1 4.5 3 10H7.5l3-10-1-4.5z"/>
+                    <path d="M10 6.5l2 3 2-3"/>
+                  </svg>
+                </div>
+                <span class="attire-icon-label">LADIES</span>
+              </div>
+
+              <!-- Gentlemen Tuxedo SVG Icon -->
+              <div class="attire-icon-box">
+                <div class="attire-icon-circle">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                    <path d="M6.5 6.5h11l1.5 14.5H5L6.5 6.5z"/>
+                    <path d="M6.5 6.5l5.5 7 5.5-7"/>
+                    <path d="M10.5 8l1.5.75 1.5-.75-.5 1.25.5 1.25-1.5-.75-1.5.75.5-1.25-.5-1.25z" fill="var(--gold)" stroke="none"/>
+                  </svg>
+                </div>
+                <span class="attire-icon-label">GENTLEMEN</span>
+              </div>
+
+            </div>
 
             <div class="dress-grid">
               <span class="dress-pill">
                 <span class="swatch" style="background:#1a1a1a;border:1px solid #444;"></span>
-                Black – Classic &amp; Formal
+                Black (Semi-Formal)
               </span>
 
               <span class="dress-pill">
@@ -731,17 +824,22 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
 
               <span class="dress-pill">
                 <span class="swatch" style="background:#d4b896;"></span>
-                Nude / Champagne / Beige
+                Nude / Champagne
               </span>
 
               <span class="dress-pill">
-                <span class="swatch" style="background:linear-gradient(135deg,#c0c8d8,#c9a84c);"></span>
-                Metallics
+                <span class="swatch" style="background:#fceb77;border:1px solid #ccc;"></span>
+                Yellow / Gold
+              </span>
+
+              <span class="dress-pill">
+                <span class="swatch" style="background:linear-gradient(135deg,#ffd1dc,#bdf6fe);"></span>
+                Pastels
               </span>
             </div>
 
-            <p style="margin-top:1rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:rgba(26,42,108,0.6);">
-              Kindly reserve <strong style="font-style:normal;color:var(--royal);">Midnight Blue</strong> for the debutante ✦
+            <p style="margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:rgba(26,42,108,0.7);">
+              Kindly reserve <strong style="font-style:normal;color:var(--royal);">all shades of Blue and Midnight Blue</strong> for the debutante ✦
             </p>
           </div>
         </div>
@@ -761,7 +859,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
             </p>
 
             <div class="gift-tags">
-              <span class="gift-tag">💳 GCash</span>
+              <span class="gift-tag">💵 Cash</span>
               <span class="gift-tag">💄 Skincare &amp; Beauty</span>
               <span class="gift-tag">🎁 Gift Cards</span>
               <span class="gift-tag">🧱 Lego</span>
@@ -770,48 +868,76 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--ink);}
               <span class="gift-tag">👜 Bag</span>
               <span class="gift-tag">💍 Silver Jewelries</span>
             </div>
+          </div>
+        </div>
 
-            <div class="gcash-box">
+        <!-- Embedded RSVP Section -->
+        <div class="fade-section">
+          <div class="rsvp-section">
+            <p class="card-overline" style="margin-bottom:0.8rem;">✦ &nbsp; RSVP &nbsp; ✦</p>
+            <p class="card-body">
+              Kindly RSVP on or before<br/>
+              <strong style="color:var(--royal); font-size:1.1rem;">December 11, 2026</strong>
+            </p>
+            
+            <div class="rsvp-form-container">
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeA5up695ml7q49lQJjZoanC-5uqWRQWhLNMkNtEPji9LtWEg/viewform?embedded=true" 
+                width="100%" 
+                height="600" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">
+                Loading…
+              </iframe>
             </div>
           </div>
         </div>
 
-        <!-- Map -->
+        <!-- Map & Directions Header -->
         <div class="fade-section">
-          <div class="map-section">
+          <div class="map-section-wrapper">
+            
+            <p class="card-overline" style="margin-bottom:1.2rem;">✦ &nbsp; DIRECTIONS TO THE VENUE &nbsp; ✦</p>
+            
+            <p class="map-intro-text">
+              The following is the map to the venue.<br/>
+              Kindly click the button for direct assistance with directions.
+            </p>
+            
+            <div class="map-section">
+              <div class="map-header">
+                <svg width="16" height="16" fill="none" stroke="var(--gold-light)" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
 
-            <div class="map-header">
-              <svg width="16" height="16" fill="none" stroke="var(--gold-light)" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                <circle cx="12" cy="9" r="2.5"/>
-              </svg>
+                <div>
+                  <div class="map-header-text">LEONIDA'S RESORT AND RESTAURANT</div>
+                  <div class="map-header-sub">December 12, 2026 · 4:00 PM</div>
+                </div>
+              </div>
 
-              <div>
-                <div class="map-header-text">LEONIDA'S RESORT AND RESTAURANT</div>
-                <div class="map-header-sub">December 12, 2026 · 4:00 PM</div>
+              <div class="map-frame-wrap">
+                <iframe
+                  src="https://www.google.com/maps?q=Leonida%27s%20Resort%20and%20Restaurant&output=embed"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  style="width:100%;height:100%;border:0;display:block;"
+                  title="Leónida's Resort and Restaurant">
+                </iframe>
+              </div>
+
+              <div class="map-cta">
+                <a
+                  href="https://www.google.com/maps/place/leonida's+resort+and+restaurant/data=!4m2!3m1!1s0x33bd71d04c84563b:0xf94d2feb3abcb39e?sa=X&ved=1t:242&ictx=111"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  ✦ &nbsp; OPEN IN GOOGLE MAPS &nbsp; ✦
+                </a>
               </div>
             </div>
-
-            <div class="map-frame-wrap">
-              <iframe
-                src="https://www.google.com/maps?q=Leonida%27s%20Resort%20and%20Restaurant&output=embed"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                style="width:100%;height:100%;border:0;display:block;"
-                title="Leónida's Resort and Restaurant">
-              </iframe>
-            </div>
-
-            <div class="map-cta">
-              <a
-                href="https://www.google.com/maps/place/leonida's+resort+and+restaurant/data=!4m2!3m1!1s0x33bd71d04c84563b:0xf94d2feb3abcb39e?sa=X&ved=1t:242&ictx=111"
-                target="_blank"
-                rel="noopener noreferrer">
-                ✦ &nbsp; OPEN IN GOOGLE MAPS &nbsp; ✦
-              </a>
-            </div>
-
           </div>
         </div>
 
@@ -1008,7 +1134,7 @@ function updateCountdown(){
   const m=Math.floor((diff%3600000)/60000);
   const s=Math.floor((diff%60000)/1000);
 
-  document.getElementById('cd-days').textContent=String(d).padStart(3,'0');
+  document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
   document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
   document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
   document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
